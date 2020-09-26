@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: serif;
 }
 
 *:before,
@@ -34,7 +35,7 @@ h1 {
   color: #000 !important;
 }
 .navbar-brand p {
-  font-size: 12.5pt
+  font-size: 14.7pt
 }
 .bg-dark {
   background-color: #7B8CDE !important;
@@ -53,7 +54,6 @@ h1 {
 }
 
 /*Home*/
-
 .home-content {
   display: flex;
   flex-direction: column;
@@ -63,7 +63,8 @@ h1 {
 .intro {
   width: 80%;
   text-align: center;
-  margin:20px;
+  margin: 20px;
+  font-family: 'Courier Prime', monospace;
 }
 .books {
   display: flex;
@@ -85,77 +86,68 @@ h1 {
 }
 .book h4,
 .book p {
-  margin: 5px 5px;
+  margin: 10px 5px 5px 5px;
+}
+.renchanged h4,
+.renchanged p {
+  margin: 10px 5px 5px 10px;
+}
+.book h4 {
+  font-family: "Courier Prime", monospace;
 }
 .book img {
-  float: left;
   max-width: 200px;
   height: inherit;
   border-radius: 20px;
   margin-right: 10px;
 }
-
-/*Portfolio*/
-.masonry {
-  margin: 1.5em auto;
-  padding: 0 1.5em;
-  column-count: 1;
-  column-gap: 1.5em;
-  max-width: 960px;
+.renchanged img {
+  float: right;
+  margin-left: 10px;
+  margin-right: 0;
 }
-.item {
-  display: inline-block;
-  margin: 0 0 1.5em;
-  width: 100%;
-}
-.item img {
-  max-width: 100%;
-  max-height: 100%;
-}
-.item img:hover {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .2),
-    0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-@media only screen and (min-width: 961px) {
-  .masonry {
-    column-count: 4;
-  }
-}
-@media only screen and (max-width: 960px) and (min-width: 501px) {
-  .masonry {
-    column-count: 2;
-  }
+.camelost img,
+.futerror img {
+  float: left;
 }
 
-/*Reviews*/
-.reviews {
+/*Book Pages*/
+.book-content {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  column-count: 1;
 }
-.review-item {
-  width: 80%;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .2),
-    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+.book-content h1 {
+  font-family: 'Courier Prime', monospace;
+  margin-top: 10px;
+  text-align: center;
+}
+.book-img {
+  max-width: 90%;
   border-radius: 20px;
-  margin-top: 1em;
-  margin-bottom: 1em;
-  background-color: #eee;
 }
-.review-item img {
-  float: left;
-  height: 50px;
-  width: 50px;
-  border: 1px solid black;
-  border-radius: 100%;
-  margin: 10px;
+.book-info {
+  max-width: 90%;
+  list-style-position: inside;
+  margin-top: 20px;
 }
-.review-item h4 {
-  margin: 10px;
+.book-info strong {
+  font-family: "Courier Prime", monospace;
+  font-weight: bold;
 }
-.review-item p {
-  margin: 10px;
+p.main-characters {
+  margin-bottom: 0;
+}
+@media only screen and (min-width: 750px) {
+  .book-content {
+    display: block;
+  }
+  .book-img {
+    width: 400px;
+    float: left;
+    margin: 0 20px 20px 10px;
+  }
 }
 
 /*About Me*/
@@ -164,11 +156,15 @@ h1 {
   margin: 0 auto;
   margin-top: 1em;
 }
+.about-me h1 {
+  font-family: "Courier Prime", monospace;
+}
 .profile-pic {
   width: 100%;
+  border-radius: 20px;
 }
 .about-me h3 {
-  font-family: serif;
+  font-family: "Courier Prime", monospace;
   margin-top: 1em;
 }
 .about-me p {
@@ -200,6 +196,7 @@ h1 {
 }
 .footer-item {
   margin: 1em 1em;
+  font-family: serif;
 }
 .footer-item a {
   text-decoration: underline;
