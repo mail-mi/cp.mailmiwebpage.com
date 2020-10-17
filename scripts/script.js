@@ -31,7 +31,7 @@ document.getElementById("search").addEventListener('input', (event) => {
 document.getElementById("form").addEventListener("submit", (event) => {
   event.preventDefault();
   let searchValue = document.getElementById("search").value;
-  fetch("pages.txt")
+  fetch("/pages.txt")
     .then((response) => {
       return response.json();
     }).then(json => {
