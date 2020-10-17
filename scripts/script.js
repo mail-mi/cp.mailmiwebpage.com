@@ -1,3 +1,4 @@
+
 document.getElementById("search").addEventListener('input', (event) => {
   event.preventDefault();
   let pageNames = "<ul id='page-names'>";
@@ -30,7 +31,7 @@ document.getElementById("search").addEventListener('input', (event) => {
 
 document.getElementById("form").addEventListener("submit", (event) => {
   event.preventDefault();
-  let searchValue = document.getElementById("search").value;
+  let search = document.getElementById("search").value;
   fetch("/pages.txt")
     .then((response) => {
       return response.json();
@@ -39,7 +40,7 @@ document.getElementById("form").addEventListener("submit", (event) => {
       newUrl = newUrl.substring(0, newUrl.indexOf("/", 7));
 
       for (let i = 0; i < json.length; i++) {
-        if (searchValue.toLowerCase() == json[i].pageName.toLowerCase()) {
+        if (search.toLowerCase() == json[i].pageName.toLowerCase()) {
           newUrl += json[i].link;
           document.location.href = newUrl;
           return;
@@ -63,3 +64,34 @@ document.addEventListener("click", (event) => {
 
   document.getElementById("search-results-wrapper").innerHTML = "";
 });
+
+document.getElementById("google-form").addEventListener("submit", (event) => {
+  event.preventDefault();
+  let search = document.getElementById("search-google").value;
+  if (search == "") {
+    let error = "<p class='intro'>";
+    error += "Please enter a search query.";
+    error += "</p>";
+    document.getElementById("google-books").innerHTML = error;
+    return;
+  }
+  let url = "https://www.googleapis.com/books/v1/volumes?q=";
+  url += search;
+  fetch(url)
+    .then(response => {
+      return response.json();
+    }).then (json => {
+      console.log(json);
+      let books = "";
+      for (let i = 0; i < json.items.length; i++) {
+        books += "<div class='book-result-item'>"
+        books += "<p class='google-book-info'><strong>Search Result #" + (i + 1) + "</strong></p>";
+        books += "<p class='google-book-info'><strong>Author:</strong> " + json.items[i].volumeInfo.authors[0] + "</p>";
+        books += "<p class='google-book-info'><strong>Book Title:</strong> " + json.items[i].volumeInfo.title + "</p>";
+        books += "<p class='google-book-info'><a class='google-book-links' href='" + json.items[i].volumeInfo.infoLink;
+        books += "'>Link to Google Books page.</a></p>"
+        books += "</div>";
+      }
+      document.getElementById("google-books").innerHTML = books;
+    })
+})

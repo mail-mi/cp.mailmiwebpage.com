@@ -54,8 +54,14 @@
     </nav>
 
     <div class="home-content">
-      <p class="intro">I'm sorry, the page you searched for does not exist. Please try a different
-        search.</p>
+      <form id="google-form">
+        <label class="intro">I'm sorry, the page you searched for does not exist on this site.
+          Please try a different search, or you may try searching on Google Books:</label>
+        <input type="text" placeholder="Search Google Books" id="search-google">
+        <input type="submit" id="get-book" value="Search Google books"></submit>
+        <div id="google-books"></div>
+      </form>
+
     </div>
     <div class="push"></div>
   </div>
