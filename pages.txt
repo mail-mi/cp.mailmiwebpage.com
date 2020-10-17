@@ -1,0 +1,7 @@
+[
+  {"pageName":"Camelost", "link":"/pages/camelost.html"},
+  {"pageName":"Renchanged", "link":"/pages/renchanged.html"},
+  {"pageName":"Futerror", "link":"/pages/futerror.html"},
+  {"pageName":"Home", "link":"/index.html"},
+  {"pageName":"About Me", "link":"/pages/about-me.html"}
+]
