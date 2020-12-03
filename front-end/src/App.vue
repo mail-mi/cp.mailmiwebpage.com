@@ -26,6 +26,13 @@
   </div>
   <router-view />
 
+  <div class="footer">
+    <p class="footer-item">You can find me on <a href="https://www.linkedin.com/in/liam-ashton/" target="_blank">
+        LinkedIn</a>, on <a href="https://github.com/mail-mi" target="_blank">GitHub</a>,
+      or on <a href="https://www.facebook.com/liam.ashton.376" target="_blank">Facebook</a>.</p>
+    <p class="footer-item">My <a href="https://github.com/mail-mi/cp.mailmiwebpage.com" target="_blank">GitHub repository</a>.</p>
+  </div>
+
 </div>
 </template>
 
@@ -307,6 +314,10 @@ h1 {
 }
 
 /*Book Pages*/
+.book-page {
+  display: flex;
+  flex-direction: column;
+}
 .book-content {
   display: flex;
   flex-direction: column;
@@ -338,6 +349,53 @@ h1 {
 
 p.main-characters {
   margin-bottom: 0;
+}
+
+.comments {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.comments h1 {
+  font-family: "Courier Prime", monospace;
+}
+
+.comment-form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.comment-form * {
+  margin-bottom: 10px;
+}
+
+.comment-form button {
+  background-color: #235789;
+  color: #F9E7E7;
+  font-family: "Courier Prime", monospace;
+  padding: 10px;
+}
+
+.comment-list {
+  text-align: center;
+}
+
+.comment-list p {
+  margin: 1px;
+}
+
+.comment-text {
+  font-family: "Courier Prime", monospace;
+}
+
+.comment-info {
+  margin-bottom: 5px;
+}
+
+.delete {
+  font-family: "Courirer Prime", monospace;
+  color: red;
 }
 
 @media only screen and (min-width: 750px) {
